@@ -1,12 +1,27 @@
-//TODO: Part 1 for this keyword
-
 console.log(this);
 
-var game = "basketball";
+// var game = "basketball";
 
-function sayName() {
-  var name = "Dev";
-  console.log(this);
-}
+// function sayName() {
+//   var name = "Dev";
+//   console.log("hi",this);
+// }
 
-sayName();
+// sayName();
+
+//For all regular function calls, this points to window object
+
+var user={
+  firstName:"Dev",
+  courseCount:4,
+  getCourseCount: function(){
+    console.log("Line 18",this);
+    function sayHello(){
+      console.log("Hello");
+      console.log("Line 21",this);
+    }
+    sayHello();
+  },
+};
+
+user.getCourseCount()
